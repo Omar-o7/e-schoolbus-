@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-schoolBUS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>مرحبًا في e-schoolBUS</h1>
+
+    <!-- نموذج تسجيل دخول السائق -->
+    <div class="form-section">
+      <h2>تسجيل دخول السائق</h2>
+      <form id="driverLogin">
+        <label for="driverNationalIdLogin">الرقم الوطني:</label>
+        <input type="text" id="driverNationalIdLogin" placeholder="أدخل الرقم الوطني" required>
+
+        <button type="submit">تسجيل الدخول</button>
+      </form>
+    </div>
+
+    <!-- نموذج تسجيل دخول ولي الأمر -->
+    <div class="form-section">
+      <h2>تسجيل دخول ولي الأمر</h2>
+      <form id="parentLogin">
+        <label for="parentNameLogin">اسم المستخدم:</label>
+        <input type="text" id="parentNameLogin" placeholder="أدخل اسمك" required>
+
+        <label for="parentPhoneLogin">رقم الهاتف:</label>
+        <input type="text" id="parentPhoneLogin" placeholder="أدخل رقم هاتفك" required>
+
+        <button type="submit">تسجيل الدخول</button>
+      </form>
+    </div>
+
+    <!-- نموذج تسجيل دخول المدرسة -->
+    <div class="form-section">
+      <h2>تسجيل دخول المدرسة</h2>
+      <form id="schoolLogin">
+        <label for="schoolNameLogin">اسم المدرسة:</label>
+        <input type="text" id="schoolNameLogin" placeholder="أدخل اسم المدرسة" required>
+
+        <label for="schoolPasswordLogin">كلمة المرور:</label>
+        <input type="password" id="schoolPasswordLogin" placeholder="أدخل كلمة المرور" required>
+
+        <button type="submit">تسجيل الدخول</button>
+      </form>
+    </div>
+
+    <!-- تسجيل الدخول باستخدام Google -->
+    <div class="form-section">
+      <h2>تسجيل الدخول باستخدام Google</h2>
+      <button id="googleLogin">تسجيل الدخول باستخدام Google</button>
+    </div>
+
+    <!-- رابط لصفحة إدارة المدارس مع كلمة مرور خاصة -->
+    <div class="form-section">
+      <h2>إدارة المدارس (للمسؤولين فقط)</h2>
+      <form id="adminAccessForm">
+        <label for="adminPassword">كلمة المرور الخاصة:</label>
+        <input type="password" id="adminPassword" placeholder="أدخل كلمة المرور الخاصة" required>
+
+        <button type="submit">الدخول إلى إدارة المدارس</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js"></script>
+
+  <!-- Firebase Config -->
+  <script type="module" src="firebase-config.js"></script>
+
+  <!-- Main Script -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>

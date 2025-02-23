@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة تحكم ولي الأمر - e-schoolBUS</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- إضافة مكتبة Leaflet.js -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- إضافة Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-bus"></i> لوحة تحكم ولي الأمر</h1>
+
+    <!-- معلومات ولي الأمر -->
+    <div id="parentInfo">
+      <h2>مرحبًا بك، ولي الأمر!</h2>
+      <p>يمكنك تتبع موقع الحافلة ومعرفة المسار الكامل لها.</p>
+    </div>
+
+    <!-- خريطة لتتبع الحافلة -->
+    <div id="map" style="width: 100%; height: 400px; margin-top: 20px;"></div>
+
+    <!-- إعدادات المسافة للإشعارات -->
+    <div id="distanceSetting">
+      <label for="notificationDistance"><i class="fas fa-map-marker-alt"></i> المسافة للإشعارات (بالأمتار):</label>
+      <input type="number" id="notificationDistance" value="500" min="100" max="5000" />
+    </div>
+
+    <!-- نموذج تفعيل الطفل باستخدام الرقم الوطني -->
+    <div id="activateChildFormContainer">
+      <h2><i class="fas fa-child"></i> تفعيل طفل باستخدام الرقم الوطني</h2>
+      <form id="activateChildForm">
+        <label for="childNationalId"><i class="fas fa-id-card"></i> الرقم الوطني للطفل:</label>
+        <input type="text" id="childNationalId" placeholder="أدخل الرقم الوطني للطفل" required>
+
+        <button type="submit"><i class="fas fa-check"></i> تفعيل الطفل</button>
+      </form>
+    </div>
+
+    <!-- قائمة الأبناء -->
+    <div id="childrenList">
+      <h2><i class="fas fa-users"></i> قائمة الأبناء</h2>
+      <ul id="children"></ul>
+    </div>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-messaging.js"></script>
+
+  <!-- Leaflet.js -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Firebase Config -->
+  <script type="module" src="firebase-config.js"></script>
+
+  <!-- Main Script -->
+  <script type="module" src="parent-dashboard.js"></script>
+</body>
+</html>

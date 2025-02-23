@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إدارة المدارس - e-schoolBUS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>إدارة المدارس</h1>
+
+    <!-- نموذج إضافة مدرسة -->
+    <div class="form-section">
+      <h2>إضافة مدرسة جديدة</h2>
+      <form id="addSchoolForm">
+        <label for="newSchoolName">اسم المدرسة:</label>
+        <input type="text" id="newSchoolName" placeholder="أدخل اسم المدرسة" required>
+
+        <label for="newSchoolPassword">كلمة المرور:</label>
+        <input type="password" id="newSchoolPassword" placeholder="أدخل كلمة المرور" required>
+
+        <label for="newSchoolPhone">رقم الهاتف:</label>
+        <input type="text" id="newSchoolPhone" placeholder="أدخل رقم الهاتف" required>
+
+        <label for="newSchoolEmail">البريد الإلكتروني:</label>
+        <input type="email" id="newSchoolEmail" placeholder="أدخل البريد الإلكتروني" required>
+
+        <button type="submit">إضافة المدرسة</button>
+      </form>
+    </div>
+
+    <!-- قائمة المدارس -->
+    <div id="schoolList">
+      <h2>قائمة المدارس</h2>
+      <ul id="schools"></ul>
+    </div>
+
+    <!-- نموذج تعديل المدرسة (يظهر عند النقر على زر التعديل) -->
+    <div id="editSchoolFormContainer" style="display: none;">
+      <h2>تعديل بيانات المدرسة</h2>
+      <form id="editSchoolForm">
+        <label for="editSchoolName">اسم المدرسة:</label>
+        <input type="text" id="editSchoolName" readonly>
+
+        <label for="editSchoolPassword">كلمة المرور:</label>
+        <input type="password" id="editSchoolPassword" placeholder="أدخل كلمة المرور الجديدة">
+
+        <label for="editSchoolPhone">رقم الهاتف:</label>
+        <input type="text" id="editSchoolPhone" placeholder="أدخل رقم الهاتف الجديد">
+
+        <label for="editSchoolEmail">البريد الإلكتروني:</label>
+        <input type="email" id="editSchoolEmail" placeholder="أدخل البريد الإلكتروني الجديد">
+
+        <button type="submit">حفظ التعديلات</button>
+        <button type="button" id="cancelEdit">إلغاء</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"></script>
+
+  <!-- Firebase Config -->
+  <script type="module" src="firebase-config.js"></script>
+
+  <!-- Main Script -->
+  <script type="module" src="manage-schools.js"></script>
+</body>
+</html>
